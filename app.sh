@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run --name monsite -v /home/nicogiard/tmp/traefik/monsite:/app -p 9000:9000 -d \
+docker run --name monsite -v $PWD/monsite:/app -p 9000:9000 -d \
  --label "traefik.phhome.frontend.redirect.regex=^http://www.monsite.ph/$" \
  --label "traefik.phhome.frontend.redirect.replacement=http://www.monsite.fr/en/philippines" \
  --label "traefik.phhome.frontend.rule=Host:www.monsite.ph" \
